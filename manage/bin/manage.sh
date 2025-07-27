@@ -132,6 +132,8 @@ else
   depend=0
 fi
 
+"${pthtop}"/manage/bin/create.sh
+
 if flgexc ${namsrc}
 then
   lstdpd=(${namsrc})
@@ -150,7 +152,6 @@ then
     then
       cd "${pthtop}"
       getdif ${namsrc}
-      "${pthtop}"/manage/bin/create.sh
     fi
   else
     if cnfrtn "target: create (import) : ${unqdpd[@]}"
