@@ -132,6 +132,8 @@ else
   depend=0
 fi
 
+"${pthtop}"/manage/bin/create.sh
+
 if flgexc ${namsrc}
 then
   lstdpd=(${namsrc})
@@ -149,7 +151,6 @@ then
     if cnfrtn 'update: manage'
     then
       cd "${pthtop}"
-      "${pthtop}"/manage/bin/create.sh
       getdif ${namsrc}
     fi
   else
