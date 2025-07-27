@@ -149,8 +149,8 @@ then
     if cnfrtn 'update: manage'
     then
       cd "${pthtop}"
-      getdif ${namsrc}
       "${pthtop}"/manage/bin/create.sh
+      getdif ${namsrc}
     fi
   else
     if cnfrtn "target: create (import) : ${unqdpd[@]}"
