@@ -1,0 +1,60 @@
+manage master https://pubgit.xoxxox.net/cnnmmd
+
+cnnmmd_xoxxox_appmid master https://pubgit.xoxxox.net/cnnmmd_xoxxox_appmid
+cnnmmd_xoxxox_appweb master https://pubgit.xoxxox.net/cnnmmd_xoxxox_appweb
+cnnmmd_xoxxox_appcmf master https://pubgit.xoxxox.net/cnnmmd_xoxxox_appcmf
+
+cnnmmd_xoxxox_libmid master https://pubgit.xoxxox.net/cnnmmd_xoxxox_libmid
+cnnmmd_xoxxox_libimg master https://pubgit.xoxxox.net/cnnmmd_xoxxox_libimg
+cnnmmd_xoxxox_libtlk master https://pubgit.xoxxox.net/cnnmmd_xoxxox_libtlk
+cnnmmd_xoxxox_libmcu master https://pubgit.xoxxox.net/cnnmmd_xoxxox_libmcu
+cnnmmd_xoxxox_libcmf master https://pubgit.xoxxox.net/cnnmmd_xoxxox_libcmf
+
+cnnmmd_xoxxox_envweb master https://pubgit.xoxxox.net/cnnmmd_xoxxox_envweb
+cnnmmd_xoxxox_envrcg master https://pubgit.xoxxox.net/cnnmmd_xoxxox_envrcg
+cnnmmd_xoxxox_envoai master https://pubgit.xoxxox.net/cnnmmd_xoxxox_envoai
+cnnmmd_xoxxox_envnai master https://pubgit.xoxxox.net/cnnmmd_xoxxox_envnai
+cnnmmd_xoxxox_envhgf master https://pubgit.xoxxox.net/cnnmmd_xoxxox_envhgf
+
+cnnmmd_xoxxox_imgdll master https://pubgit.xoxxox.net/cnnmmd_xoxxox_imgdll
+cnnmmd_xoxxox_imgnai master https://pubgit.xoxxox.net/cnnmmd_xoxxox_imgnai
+cnnmmd_xoxxox_sttnil master https://pubgit.xoxxox.net/cnnmmd_xoxxox_sttnil
+cnnmmd_xoxxox_sttoaw master https://pubgit.xoxxox.net/cnnmmd_xoxxox_sttoaw
+cnnmmd_xoxxox_sttwsp master https://pubgit.xoxxox.net/cnnmmd_xoxxox_sttwsp
+cnnmmd_xoxxox_sttvec master https://pubgit.xoxxox.net/cnnmmd_xoxxox_sttvec
+cnnmmd_xoxxox_ttsply master https://pubgit.xoxxox.net/cnnmmd_xoxxox_ttsply
+cnnmmd_xoxxox_ttsvox master https://pubgit.xoxxox.net/cnnmmd_xoxxox_ttsvox
+cnnmmd_xoxxox_ttsvit master https://pubgit.xoxxox.net/cnnmmd_xoxxox_ttsvit
+cnnmmd_xoxxox_ttsnjv master https://pubgit.xoxxox.net/cnnmmd_xoxxox_ttsnjv
+cnnmmd_xoxxox_tttsim master https://pubgit.xoxxox.net/cnnmmd_xoxxox_tttsim
+cnnmmd_xoxxox_tttgpt master https://pubgit.xoxxox.net/cnnmmd_xoxxox_tttgpt
+cnnmmd_xoxxox_tttnai master https://pubgit.xoxxox.net/cnnmmd_xoxxox_tttnai
+cnnmmd_xoxxox_tttlam master https://pubgit.xoxxox.net/cnnmmd_xoxxox_tttlam
+cnnmmd_xoxxox_sensim master https://pubgit.xoxxox.net/cnnmmd_xoxxox_sensim
+cnnmmd_xoxxox_sengpt master https://pubgit.xoxxox.net/cnnmmd_xoxxox_sengpt
+cnnmmd_xoxxox_senluk master https://pubgit.xoxxox.net/cnnmmd_xoxxox_senluk
+
+cnnmmd_xoxxox_tlkweb master https://pubgit.xoxxox.net/cnnmmd_xoxxox_tlkweb
+cnnmmd_xoxxox_tlkelc master https://pubgit.xoxxox.net/cnnmmd_xoxxox_tlkelc
+cnnmmd_xoxxox_tlkuni master https://pubgit.xoxxox.net/cnnmmd_xoxxox_tlkuni
+cnnmmd_xoxxox_tlkvam master https://pubgit.xoxxox.net/cnnmmd_xoxxox_tlkvam
+cnnmmd_xoxxox_tlkmcu master https://pubgit.xoxxox.net/cnnmmd_xoxxox_tlkmcu
+cnnmmd_xoxxox_tlkfig master https://pubgit.xoxxox.net/cnnmmd_xoxxox_tlkfig
+
+cnnmmd_xoxxox_mgrcmf_cmf_txt_vox_001 master https://pubgit.xoxxox.net/cnnmmd_xoxxox_mgrcmf_cmf_txt_vox_001
+cnnmmd_xoxxox_mgrcmf_cmf_sim_wsp_vox_001 master https://pubgit.xoxxox.net/cnnmmd_xoxxox_mgrcmf_cmf_sim_wsp_vox_001
+cnnmmd_xoxxox_mgrcmf_vam_txt_vox_001 master https://pubgit.xoxxox.net/cnnmmd_xoxxox_mgrcmf_vam_txt_vox_001
+cnnmmd_xoxxox_mgrcmf_vam_sim_wsp_vox_001 master https://pubgit.xoxxox.net/cnnmmd_xoxxox_mgrcmf_vam_sim_wsp_vox_00
+cnnmmd_xoxxox_mgrcmf_cmf_tlk_wsp_vox_gpt_001 master https://pubgit.xoxxox.net/cnnmmd_xoxxox_mgrcmf_cmf_tlk_wsp_vox_gpt_001
+cnnmmd_xoxxox_mgrcmf_cmf_tlk_wsp_vox_gpt_002 master https://pubgit.xoxxox.net/cnnmmd_xoxxox_mgrcmf_cmf_tlk_wsp_vox_gpt_002
+cnnmmd_xoxxox_mgrcmf_cmf_tlk_wsp_vit_nai_001 master https://pubgit.xoxxox.net/cnnmmd_xoxxox_mgrcmf_cmf_tlk_wsp_vit_nai_001
+cnnmmd_xoxxox_mgrpyt_web_tlk_wsp_vox_gpt_001 master https://pubgit.xoxxox.net/cnnmmd_xoxxox_mgrpyt_web_tlk_wsp_vox_gpt_001
+cnnmmd_xoxxox_mgrcmf_web_tlk_wsp_vox_gpt_001 master https://pubgit.xoxxox.net/cnnmmd_xoxxox_mgrcmf_web_tlk_wsp_vox_gpt_001
+cnnmmd_xoxxox_mgrcmf_elc_tlk_wsp_vox_gpt_001 master https://pubgit.xoxxox.net/cnnmmd_xoxxox_mgrcmf_elc_tlk_wsp_vox_gpt_001
+cnnmmd_xoxxox_mgrcmf_uni_tlk_wsp_vox_gpt_001 master https://pubgit.xoxxox.net/cnnmmd_xoxxox_mgrcmf_uni_tlk_wsp_vox_gpt_001
+cnnmmd_xoxxox_mgrcmf_vam_tlk_wsp_vox_gpt_001 master https://pubgit.xoxxox.net/cnnmmd_xoxxox_mgrcmf_vam_tlk_wsp_vox_gpt_001
+cnnmmd_xoxxox_mgrcmf_mcu_tlk_wsp_vox_gpt_001 master https://pubgit.xoxxox.net/cnnmmd_xoxxox_mgrcmf_mcu_tlk_wsp_vox_gpt_001
+cnnmmd_xoxxox_mgrcmf_fig_tlk_wsp_vox_gpt_001 master https://pubgit.xoxxox.net/cnnmmd_xoxxox_mgrcmf_fig_tlk_wsp_vox_gpt_001
+
+cnnmmd_xoxxox_mgrpyt_con_try_001 master https://pubgit.xoxxox.net/cnnmmd_xoxxox_mgrpyt_con_try_001
+cnnmmd_xoxxox_mgrcmf_cmf_try_001 master https://pubgit.xoxxox.net/cnnmmd_xoxxox_mgrcmf_cmf_try_001
