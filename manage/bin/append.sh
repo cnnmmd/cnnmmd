@@ -12,7 +12,12 @@ do
     if test -e "${i}/export"
     then
       echo "export: ${i}"
-      cd "${i}/export" && tar -cf - * | (cd "${pthtop}"/export && tar -xf -)
+      cd "${i}/export"
+      l=(*)
+      if test ${#l[@]} -gt 0
+      then
+        tar -cf - * | (cd "${pthtop}"/export && tar -xf -)
+      fi
     fi
   fi
 done
@@ -24,7 +29,12 @@ do
     if test -e "${i}/export"
     then
       echo "export: ${i}"
-      cd "${i}/export" && tar -cf - * | (cd "${pthtop}"/export && tar -xf -)
+      cd "${i}/export"
+      l=(*)
+      if test ${#l[@]} -gt 0
+      then
+        tar -cf - * | (cd "${pthtop}"/export && tar -xf -)
+      fi
     fi
   fi
 done
