@@ -174,7 +174,7 @@ then
         getsrc ${i}
         stsupd=${?}
       done
-      if ! ${stsupd}
+      if test ! ${stsupd}
       then
         echo "status: update (remove & append) : export"
         "${pthtop}"/manage/bin/remove.sh
