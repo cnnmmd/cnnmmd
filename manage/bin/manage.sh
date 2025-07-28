@@ -33,6 +33,7 @@ function getrem {
 function getdif {
   local namsrc=${1}
   local brcsrc remsrc brccrr remcrr
+  local stsupd=0
 
   read brcsrc remsrc < <(getrem ${namsrc})
   echo "status: branch: ${brcsrc}" # DBG
@@ -42,13 +43,20 @@ function getdif {
   if test ${brccrr} != ${brcsrc}
   then
     git switch ${brcsrc} || git switch -c ${brcsrc}
+    stsupd=1
   fi
   if test ${remsrc} != ${remsrc}
   then
     git remote set-url origin ${remsrc}
+    stsupd=1
   fi
   git fetch origin ${brcsrc}
-  git reset --hard "origin/${brcsrc}"
+  if ! git diff --quiet HEAD "origin/${brcsrc}"
+  then
+    git reset --hard "origin/${brcsrc}"
+    stsupd=1
+  fi
+  return ${stsupd}
 }
 
 #---------------------------------------------------------------------------
@@ -57,6 +65,7 @@ function getdif {
 function getsrc {
   local namsrc=${1}
   local brcsrc remsrc
+  local stsupd=0
 
   if test -d "${pthtop}"/import/${namsrc}
   then
@@ -64,6 +73,7 @@ function getsrc {
     then
       cd "${pthtop}"/import/${namsrc}
       getdif ${namsrc}
+      stsupd=${?}
     fi
   else
     if cnfrtn "import: ${namsrc}"
@@ -71,8 +81,10 @@ function getsrc {
       read brcsrc remsrc < <(getrem ${namsrc})
       cd "${pthtop}"/import
       git clone -b ${brcsrc} ${remsrc}
+      stsupd=1
     fi
   fi
+  return ${stsupd}
 }
 
 #---------------------------------------------------------------------------
@@ -156,12 +168,18 @@ then
   else
     if cnfrtn "target: create (import) : ${unqdpd[@]}"
     then
+      stsupd=0
       for i in ${unqdpd[@]}
       do
         getsrc ${i}
+        stsupd=${?}
       done
-      "${pthtop}"/manage/bin/remove.sh
-      "${pthtop}"/manage/bin/append.sh
+      if ! ${stsupd}
+      then
+        echo "status: update (remove & append) : export"
+        "${pthtop}"/manage/bin/remove.sh
+        "${pthtop}"/manage/bin/append.sh
+      fi
     fi
   fi
 fi
@@ -204,6 +222,7 @@ then
         fi
       fi
     done
+    echo "status: update (remove & append) : export"
     "${pthtop}"/manage/bin/remove.sh
     "${pthtop}"/manage/bin/append.sh
   fi
