@@ -174,8 +174,7 @@ then
         getsrc ${i}
         stsupd=${?}
       done
-      if test ! ${stsupd}
-      echo "stsupd[${stsupd}]" # DBG
+      if test ${stsupd} -ne 0
       then
         echo "status: update (remove & append) : export"
         "${pthtop}"/manage/bin/remove.sh
