@@ -175,6 +175,7 @@ then
         stsupd=${?}
       done
       if test ! ${stsupd}
+      echo "stsupd[${stsupd}]" # DBG
       then
         echo "status: update (remove & append) : export"
         "${pthtop}"/manage/bin/remove.sh
