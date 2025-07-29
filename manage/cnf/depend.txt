@@ -1,5 +1,6 @@
 cnnmmd_xoxxox_appcmf
 - cnnmmd_xoxxox_libmid
+- cnnmmd_xoxxox_libcmf
 
 cnnmmd_xoxxox_appweb
 - cnnmmd_xoxxox_envweb
