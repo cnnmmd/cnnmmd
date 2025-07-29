@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #---------------------------------------------------------------------------
-# 設定uv
+# 設定
 
 pthmgr="$(cd "$(dirname "${0}")/.." && pwd)"
 pthtop="$(cd "$(dirname "${0}")/../.." && pwd)"
@@ -9,6 +9,8 @@ source "${pthmgr}"/lib/shared.sh
 
 pthsrc="${pthmgr}/cnf/cnfsrc.txt" # プラグイン群のソース
 pthsrd="${pthmgr}/cnf/cnfsrc_custom.txt"
+pthdpd="${pthmgr}/cnf/depend.txt" # 依存するプラグイン群
+pthdpe="${pthmgr}/cnf/depend_custom.txt"
 pthexc="${pthmgr}/cnf/except.txt" # 除外するプラグイン群
 pthexd="${pthmgr}/cnf/except_custom.txt"
 
@@ -92,31 +94,30 @@ function getsrc {
 
 function getdpd {
   local namsrc=${1}
-  local l i r
-  local pthdpd="${pthtop}/import/${namsrc}/manage/cnf/depend.txt"
+  local l i
 
   if test ${depend} -eq 1
   then
-    if test -e "${pthdpd}"
-    then
-      l=()
-      while read r
-      do
-        l=(${r} ${l[@]})
-      done < "${pthdpd}"
-      for i in ${l[@]}
-      do
-        if test -e "${pthtop}"/import/${i}
+    l=($(
+      cat "${pthdpe}" "${pthdpd}" |
+      awk -v k="$namsrc" '
+        $0 == k    {i=1; next}
+        i && /^- / {sub(/^- /, ""); print; next}
+        i && !/^-/ {exit}
+      '
+    ))
+    for i in ${l[@]}
+    do
+      if cat "${pthdpe}" "${pthdpd}" | grep -qx -- "$namsrc"
+      then
+        if flgexc ${i}
         then
-          if flgexc ${i}
-          then
-            test ${action} = 'create' -o ${action} = 'launch' && lstdpd=(${i} ${lstdpd[@]})
-            test ${action} = 'delete' -o ${action} = 'finish' && lstdpd=(${lstdpd[@]} ${i})
-          fi
-          getdpd ${i}
+          test ${action} = 'create' -o ${action} = 'launch' && lstdpd=(${i} ${lstdpd[@]})
+          test ${action} = 'delete' -o ${action} = 'finish' && lstdpd=(${lstdpd[@]} ${i})
         fi
-      done
-    fi
+        getdpd ${i}
+      fi
+    done
   fi
 }
 
@@ -191,6 +192,7 @@ if test ${action} = 'create' -o ${action} = 'launch' -o ${action} = 'delete' -o 
 then
   if cnfrtn "target: ${action} (plugin) : ${unqdpd[@]}"
   then
+    # 公式フォルダ
     for i in ${unqdpd[@]}
     do
       f="${pthtop}"/import/${i}/manage/bin/${action}.sh
@@ -202,6 +204,19 @@ then
         fi
       fi
     done
+    # 固有フォルダ
+    for i in ${unqdpd[@]}
+    do
+      f="${pthtop}"/import_custom/${i}/manage/bin/${action}.sh
+      if test -e "${f}"
+      then
+        if cnfrtn "${action}: ${i}"
+        then
+          "${f}"
+        fi
+      fi
+    done
+    #
   fi
 fi
 
