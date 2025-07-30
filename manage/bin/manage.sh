@@ -173,7 +173,10 @@ then
       for i in ${unqdpd[@]}
       do
         getsrc ${i}
-        stsupd=${?}
+        if test ${?} -eq 1
+        then
+          stsupd=1
+        fi
       done
       if test ${stsupd} -ne 0
       then
