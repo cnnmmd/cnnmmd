@@ -16,6 +16,16 @@ pthexd="${pthmgr}/cnf/except_custom.txt"
 
 action="${1}" # アクション
 namsrc="${2}" # プラグイン
+shift 2
+depend=0
+while getopts 'd' opt
+do
+  case ${opt} in
+    d) # 依存するすべてのプラグインを対象に（-d）
+      depend=1
+      ;;
+  esac
+done
 
 #---------------------------------------------------------------------------
 # 関数：プラグインのソース群の設定を取得（ブランチ／リモートリポジトリ）
@@ -137,13 +147,6 @@ function flgexc {
 
 #---------------------------------------------------------------------------
 # 処理
-
-if test "${3}" = '-d' -o "${3}" = '--depend'
-then
-  depend=1
-else
-  depend=0
-fi
 
 "${pthtop}"/manage/bin/create.sh
 
