@@ -29,6 +29,7 @@ cnnmmd_xoxxox_ttsnjv master https://github.com/cnnmmd/cnnmmd_xoxxox_ttsnjv
 cnnmmd_xoxxox_tttsim master https://github.com/cnnmmd/cnnmmd_xoxxox_tttsim
 cnnmmd_xoxxox_tttgpt master https://github.com/cnnmmd/cnnmmd_xoxxox_tttgpt
 cnnmmd_xoxxox_tttnai master https://github.com/cnnmmd/cnnmmd_xoxxox_tttnai
+cnnmmd_xoxxox_tttlcp master https://github.com/cnnmmd/cnnmmd_xoxxox_tttlcp
 cnnmmd_xoxxox_tttlam master https://github.com/cnnmmd/cnnmmd_xoxxox_tttlam
 cnnmmd_xoxxox_sensim master https://github.com/cnnmmd/cnnmmd_xoxxox_sensim
 cnnmmd_xoxxox_sengpt master https://github.com/cnnmmd/cnnmmd_xoxxox_sengpt
