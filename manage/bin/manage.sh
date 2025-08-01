@@ -18,7 +18,7 @@ action="${1}" # アクション
 namsrc="${2}" # プラグイン
 shift 2
 depend=0
-while getopts 'd:' opt
+while getopts 'd' opt
 do
   case ${opt} in
     d) # 依存するすべてのプラグインを対象に（-d）
