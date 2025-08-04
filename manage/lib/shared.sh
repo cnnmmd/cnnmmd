@@ -97,13 +97,14 @@ function runimg_opt {
   local cnfcmp=${1}
   local cnfopt=${2}
 
+  namprj=$(basename "${cnfcmp}" | sed -E 's/^docker_(.+)\.yml$/\1/')
   cnfusr="${cnfcmp%.*}_custom.${cnfcmp#*.}"
 
   if test -f "${cnfusr}"
   then
-    docker compose -f "${cnfcmp}" -f "${cnfopt}" -f "${cnfusr}" up -d
+    docker compose -p ${namprj} -f "${cnfcmp}" -f "${cnfopt}" -f "${cnfusr}" up -d
   else
-    docker compose -f "${cnfcmp}" -f "${cnfopt}" up -d
+    docker compose -p ${namprj} -f "${cnfcmp}" -f "${cnfopt}" up -d
   fi
 }
 
@@ -113,12 +114,13 @@ function endimg_opt {
   local cnfcmp=${1}
   local cnfopt=${2}
 
+  namprj=$(basename "${cnfcmp}" | sed -E 's/^docker_(.+)\.yml$/\1/')
   cnfusr="${cnfcmp%.*}_custom.${cnfcmp#*.}"
 
   if test -f "${cnfusr}"
   then
-    docker compose -f "${cnfcmp}" -f "${cnfopt}" -f "${cnfusr}" down
+    docker compose -p ${namprj} -f "${cnfcmp}" -f "${cnfopt}" -f "${cnfusr}" down
   else
-    docker compose -f "${cnfcmp}" -f "${cnfopt}" down
+    docker compose -p ${namprj} -f "${cnfcmp}" -f "${cnfopt}" down
   fi
 }
