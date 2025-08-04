@@ -66,13 +66,14 @@ function delimg {
 function runimg {
   local cnfcmp=${1}
 
+  namprj=$(basename "${cnfcmp}" | sed -E 's/^docker_(.+)\.yml$/\1/')
   cnfusr="${cnfcmp%.*}_custom.${cnfcmp#*.}"
 
   if test -f "${cnfusr}"
   then
-    docker compose -f "${cnfcmp}" -f "${cnfusr}" up -d
+    docker compose -p ${namprj} -f "${cnfcmp}" -f "${cnfusr}" up -d
   else
-    docker compose -f "${cnfcmp}" up -d
+    docker compose -p ${namprj} -f "${cnfcmp}" up -d
   fi
 }
 
@@ -81,13 +82,14 @@ function runimg {
 function endimg {
   local cnfcmp=${1}
 
+  namprj=$(basename "${cnfcmp}" | sed -E 's/^docker_(.+)\.yml$/\1/')
   cnfusr="${cnfcmp%.*}_custom.${cnfcmp#*.}"
 
   if test -f "${cnfusr}"
   then
-    docker compose -f "${cnfcmp}" -f "${cnfusr}" down
+    docker compose -p ${namprj} -f "${cnfcmp}" -f "${cnfusr}" down
   else
-    docker compose -f "${cnfcmp}" down
+    docker compose -p ${namprj} -f "${cnfcmp}" down
   fi
 }
 
