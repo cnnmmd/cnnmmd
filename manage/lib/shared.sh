@@ -29,8 +29,22 @@ function addimg {
   local cnfimg=${2}
   local pthdoc="${3}"
 
-  test -d "${pthdoc}" || mkdir "${pthdoc}"
-  docker inspect ${imgtgt} > /dev/null 2>&1 || docker build --no-cache -t ${imgtgt} -f "${cnfimg}" "${pthdoc}"
+  pthtop="$(cd "$(dirname "${0}")/../../../.." && pwd)"
+  pthmgr="${pthtop}/manage"
+  pthevn="${pthmgr}/cnf/cnfenv.txt"
+  pthevm="${pthmgr}/cnf/cnfenv_custom.txt"
+
+  if ! docker inspect ${imgtgt} > /dev/null 2>&1
+  then
+    adrimg=$(cat "${pthevn}" "${pthevm}" | sed '/^#/d' | awk '{m[$1]=$0} END {for (k in m) {print m[k]}}' | awk -v p=${imgtgt} '$1 == p {print $2}')
+    if docker pull ${adrimg}
+    then
+      docker tag ${adrimg} ${imgtgt}
+      docker rmi ${adrimg}
+    else
+      docker build --no-cache -t ${imgtgt} -f "${cnfimg}" "${pthdoc}"
+    fi
+  fi
 }
 
 #---------------------------------------------------------------------------

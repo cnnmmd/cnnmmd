@@ -3,12 +3,12 @@
 #---------------------------------------------------------------------------
 # 設定
 
-pthmgr="$(cd "$(dirname "${0}")/.." && pwd)"
 pthtop="$(cd "$(dirname "${0}")/../.." && pwd)"
+pthmgr="$(cd "$(dirname "${0}")/.." && pwd)"
 source "${pthmgr}"/lib/shared.sh
 
-pthsrc="${pthmgr}/cnf/cnfsrc.txt" # プラグイン群のソース
-pthsrd="${pthmgr}/cnf/cnfsrc_custom.txt"
+pthplg="${pthmgr}/cnf/cnfsrc.txt" # プラグイン群のソース
+pthplh="${pthmgr}/cnf/cnfsrc_custom.txt"
 pthdpd="${pthmgr}/cnf/depend.txt" # 依存するプラグイン群
 pthdpe="${pthmgr}/cnf/depend_custom.txt"
 pthexc="${pthmgr}/cnf/except.txt" # 除外するプラグイン群
@@ -34,8 +34,8 @@ function getrem {
   local namsrc=${1}
   local brcsrc remsrc
 
-  brcsrc=$(cat "${pthsrc}" "${pthsrd}" | sed '/^#/d' | awk '{m[$1]=$0} END {for (k in m) {print m[k]}}' | awk -v p=${namsrc} '$1 == p {print $2}')
-  remsrc=$(cat "${pthsrc}" "${pthsrd}" | sed '/^#/d' | awk '{m[$1]=$0} END {for (k in m) {print m[k]}}' | awk -v p=${namsrc} '$1 == p {print $3}')
+  brcsrc=$(cat "${pthplg}" "${pthplh}" | sed '/^#/d' | awk '{m[$1]=$0} END {for (k in m) {print m[k]}}' | awk -v p=${namsrc} '$1 == p {print $2}')
+  remsrc=$(cat "${pthplg}" "${pthplh}" | sed '/^#/d' | awk '{m[$1]=$0} END {for (k in m) {print m[k]}}' | awk -v p=${namsrc} '$1 == p {print $3}')
   echo "${brcsrc} ${remsrc}"
 }
 
