@@ -1,2 +1,1 @@
-xoxxox/envtry:001 ghcr.io/cnnmmd/xoxxox/envtry:001
-#xoxxox/envtry:001 ghcr.io/cnnmmd/xoxxox/envtry:001-arc001
+xoxxox/envmid:001 ghcr.io/cnnmmd/xoxxox/envmid:001
