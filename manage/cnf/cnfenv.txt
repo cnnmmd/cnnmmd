@@ -2,3 +2,5 @@ xoxxox/envmid:001 ghcr.io/cnnmmd/xoxxox/envmid:001
 xoxxox/envcmf:001 ghcr.io/cnnmmd/xoxxox/envcmf:001
 #xoxxox/envcmf:001 ghcr.io/cnnmmd/xoxxox/envcmf:001-arc001
 xoxxox/envweb:001 ghcr.io/cnnmmd/xoxxox/envweb:001
+xoxxox/envvit:001 ghcr.io/cnnmmd/xoxxox/envvit:001
+#xoxxox/envvit:001 ghcr.io/cnnmmd/xoxxox/envvit:001-arc001
