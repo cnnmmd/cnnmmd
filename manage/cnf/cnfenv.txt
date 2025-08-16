@@ -10,3 +10,4 @@ xoxxox/envwsp:001 ghcr.io/cnnmmd/xoxxox/envwsp:001
 xoxxox/envlcp:001 ghcr.io/cnnmmd/xoxxox/envlcp:001
 xoxxox/envoai:001 ghcr.io/cnnmmd/xoxxox/envoai:001
 xoxxox/envnai:001 ghcr.io/cnnmmd/xoxxox/envnai:001
+xoxxox/envhgf:001 ghcr.io/cnnmmd/xoxxox/envhgf:001
