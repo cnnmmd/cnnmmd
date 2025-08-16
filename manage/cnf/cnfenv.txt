@@ -7,3 +7,4 @@ xoxxox/envvit:001 ghcr.io/cnnmmd/xoxxox/envvit:001
 xoxxox/envvox:001 ghcr.io/cnnmmd/xoxxox/envvox:001
 xoxxox/envwsp:001 ghcr.io/cnnmmd/xoxxox/envwsp:001
 #xoxxox/envwsp:001 ghcr.io/cnnmmd/xoxxox/envwsp:001-arc001
+xoxxox/envlcp:001 ghcr.io/cnnmmd/xoxxox/envlcp:001
