@@ -107,7 +107,7 @@ function getdpd {
   if test ${depend} -eq 1
   then
     l=($(
-      cat "${pthdpe}" "${pthdpd}" | sed -e '/^#/d' -e 's/\r$//' |
+      cat "${pthdpd}" "${pthdpe}" | sed -e '/^#/d' -e 's/\r$//' |
       awk -v k="$namsrc" '
         $0 == k    {i=1; next}
         i && /^- / {sub(/^- /, ""); print; next}
@@ -116,7 +116,7 @@ function getdpd {
     ))
     for i in ${l[@]}
     do
-      if cat "${pthdpe}" "${pthdpd}" | sed -e '/^#/d' -e 's/\r$//' | grep -qx -- "$namsrc"
+      if cat "${pthdpd}" "${pthdpe}" | sed -e '/^#/d' -e 's/\r$//' | grep -qx -- "$namsrc"
       then
         if flgexc ${i}
         then
