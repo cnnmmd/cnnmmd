@@ -21,4 +21,3 @@ fi
 touch "${pthtop}"/manage/cnf/cnfsrc_custom.txt
 touch "${pthtop}"/manage/cnf/cnfenv_custom.txt
 touch "${pthtop}"/manage/cnf/depend_custom.txt
-touch "${pthtop}"/manage/cnf/except_custom.txt
