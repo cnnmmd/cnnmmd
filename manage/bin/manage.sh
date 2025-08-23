@@ -11,8 +11,6 @@ pthplg="${pthmgr}/cnf/cnfsrc.txt" # プラグイン群のソース
 pthplh="${pthmgr}/cnf/cnfsrc_custom.txt"
 pthdpd="${pthmgr}/cnf/depend.txt" # 依存するプラグイン群
 pthdpe="${pthmgr}/cnf/depend_custom.txt"
-pthexc="${pthmgr}/cnf/except.txt" # 除外するプラグイン群
-pthexd="${pthmgr}/cnf/except_custom.txt"
 
 action="${1}" # アクション
 namsrc="${2}" # プラグイン
@@ -34,8 +32,8 @@ function getrem {
   local namsrc=${1}
   local brcsrc remsrc
 
-  brcsrc=$(cat "${pthplg}" "${pthplh}" | sed '/^#/d' | awk '{m[$1]=$0} END {for (k in m) {print m[k]}}' | awk -v p=${namsrc} '$1 == p {print $2}')
-  remsrc=$(cat "${pthplg}" "${pthplh}" | sed '/^#/d' | awk '{m[$1]=$0} END {for (k in m) {print m[k]}}' | awk -v p=${namsrc} '$1 == p {print $3}')
+  brcsrc=$(cat "${pthplg}" "${pthplh}" | sed -i '/^#/d' -i 's/\r$//' | awk '{m[$1]=$0} END {for (k in m) {print m[k]}}' | awk -v p=${namsrc} '$1 == p {print $2}')
+  remsrc=$(cat "${pthplg}" "${pthplh}" | sed -i '/^#/d' -i 's/\r$//' | awk '{m[$1]=$0} END {for (k in m) {print m[k]}}' | awk -v p=${namsrc} '$1 == p {print $3}')
   echo "${brcsrc} ${remsrc}"
 }
 
@@ -57,7 +55,7 @@ function getdif {
     git switch ${brcsrc} || git switch -c ${brcsrc}
     stsupd=1
   fi
-  if test ${remsrc} != ${remsrc}
+  if test ${remcrr} != ${remsrc}
   then
     git remote set-url origin ${remsrc}
     stsupd=1
@@ -109,7 +107,7 @@ function getdpd {
   if test ${depend} -eq 1
   then
     l=($(
-      cat "${pthdpe}" "${pthdpd}" |
+      cat "${pthdpe}" "${pthdpd}" | sed -i '/^#/d' -i 's/\r$//' |
       awk -v k="$namsrc" '
         $0 == k    {i=1; next}
         i && /^- / {sub(/^- /, ""); print; next}
@@ -118,7 +116,7 @@ function getdpd {
     ))
     for i in ${l[@]}
     do
-      if cat "${pthdpe}" "${pthdpd}" | grep -qx -- "$namsrc"
+      if cat "${pthdpe}" "${pthdpd}" | sed -i '/^#/d' -i 's/\r$//' | grep -qx -- "$namsrc"
       then
         if flgexc ${i}
         then
@@ -132,12 +130,12 @@ function getdpd {
 }
 
 #---------------------------------------------------------------------------
-# 関数：対象のプラグインが、取得対象が外されているかどうか
+# 関数：対象のプラグインが、取得対象が外されているかどうかーー外されていないなら真（0 ）
 
 function flgexc {
-  local strsrc="${1}"
+  local namsrc=${1}
 
-  if ! grep -Fxq "${strsrc}" "${pthexc}" && ! grep -Fxq "${strsrc}" "${pthexd}"
+  if cat "${pthplh}" | sed -i '/^#/d' -i 's/\r$//' | awk '$1 == s && $2 == "-" {exit 1}' -v s=${namsrc}
   then
     return 0
   else
@@ -150,6 +148,7 @@ function flgexc {
 
 "${pthtop}"/manage/bin/create.sh
 
+lstdpd=()
 if flgexc ${namsrc}
 then
   lstdpd=(${namsrc})
