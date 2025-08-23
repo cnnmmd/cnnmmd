@@ -32,8 +32,8 @@ function getrem {
   local namsrc=${1}
   local brcsrc remsrc
 
-  brcsrc=$(cat "${pthplg}" "${pthplh}" | sed -i '/^#/d' -i 's/\r$//' | awk '{m[$1]=$0} END {for (k in m) {print m[k]}}' | awk -v p=${namsrc} '$1 == p {print $2}')
-  remsrc=$(cat "${pthplg}" "${pthplh}" | sed -i '/^#/d' -i 's/\r$//' | awk '{m[$1]=$0} END {for (k in m) {print m[k]}}' | awk -v p=${namsrc} '$1 == p {print $3}')
+  brcsrc=$(cat "${pthplg}" "${pthplh}" | sed -e '/^#/d' -e 's/\r$//' | awk '{m[$1]=$0} END {for (k in m) {print m[k]}}' | awk -v p=${namsrc} '$1 == p {print $2}')
+  remsrc=$(cat "${pthplg}" "${pthplh}" | sed -e '/^#/d' -e 's/\r$//' | awk '{m[$1]=$0} END {for (k in m) {print m[k]}}' | awk -v p=${namsrc} '$1 == p {print $3}')
   echo "${brcsrc} ${remsrc}"
 }
 
@@ -107,7 +107,7 @@ function getdpd {
   if test ${depend} -eq 1
   then
     l=($(
-      cat "${pthdpe}" "${pthdpd}" | sed -i '/^#/d' -i 's/\r$//' |
+      cat "${pthdpe}" "${pthdpd}" | sed -e '/^#/d' -e 's/\r$//' |
       awk -v k="$namsrc" '
         $0 == k    {i=1; next}
         i && /^- / {sub(/^- /, ""); print; next}
@@ -116,7 +116,7 @@ function getdpd {
     ))
     for i in ${l[@]}
     do
-      if cat "${pthdpe}" "${pthdpd}" | sed -i '/^#/d' -i 's/\r$//' | grep -qx -- "$namsrc"
+      if cat "${pthdpe}" "${pthdpd}" | sed -e '/^#/d' -e 's/\r$//' | grep -qx -- "$namsrc"
       then
         if flgexc ${i}
         then
@@ -135,7 +135,7 @@ function getdpd {
 function flgexc {
   local namsrc=${1}
 
-  if cat "${pthplh}" | sed -i '/^#/d' -i 's/\r$//' | awk '$1 == s && $2 == "-" {exit 1}' -v s=${namsrc}
+  if cat "${pthplh}" | sed -e '/^#/d' -e 's/\r$//' | awk -v s=${namsrc} '$1 == s && $2 == "-" {exit 1}'
   then
     return 0
   else
