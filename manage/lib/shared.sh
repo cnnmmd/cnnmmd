@@ -36,7 +36,7 @@ function addimg {
 
   if ! docker inspect ${imgtgt} > /dev/null 2>&1
   then
-    adrimg=$(cat "${pthevn}" "${pthevm}" | sed -i '/^#/d' -i 's/\r$//' | awk '{m[$1]=$0} END {for (k in m) {print m[k]}}' | awk -v p=${imgtgt} '$1 == p {print $2}')
+    adrimg=$(cat "${pthevn}" "${pthevm}" | sed -e '/^#/d' -e 's/\r$//' | awk '{m[$1]=$0} END {for (k in m) {print m[k]}}' | awk -v p=${imgtgt} '$1 == p {print $2}')
     if docker pull ${adrimg}
     then
       docker tag ${adrimg} ${imgtgt}
