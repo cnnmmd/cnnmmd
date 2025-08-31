@@ -32,8 +32,8 @@ function getrem {
   local namsrc=${1}
   local brcsrc remsrc
 
-  brcsrc=$(cat "${pthplg}" "${pthplh}" | sed -e '/^#/d' -e 's/\r$//' | awk '{m[$1]=$0} END {for (k in m) {print m[k]}}' | awk -v p=${namsrc} '$1 == p {print $2}')
-  remsrc=$(cat "${pthplg}" "${pthplh}" | sed -e '/^#/d' -e 's/\r$//' | awk '{m[$1]=$0} END {for (k in m) {print m[k]}}' | awk -v p=${namsrc} '$1 == p {print $3}')
+  brcsrc=$(cat "${pthplg}" "${pthplh}" | sed -e '/^#/d' -e 's/\r$//' | awk '{m[$1]=$0} END {for (k in m) {print m[k]}}' | awk -v p=${namsrc} '$1 == p {print $3}')
+  remsrc=$(cat "${pthplg}" "${pthplh}" | sed -e '/^#/d' -e 's/\r$//' | awk '{m[$1]=$0} END {for (k in m) {print m[k]}}' | awk -v p=${namsrc} '$1 == p {print $4}')
   echo "${brcsrc} ${remsrc}"
 }
 
@@ -98,7 +98,7 @@ function getsrc {
 }
 
 #---------------------------------------------------------------------------
-# 関数：依存関係にあるプラグイン群を取得（重複あり）
+# 関数：依存関係にあるプラグイン群を取得（取得するもの／重複あり）
 
 function getdpd {
   local namsrc=${1}
@@ -130,9 +130,55 @@ function getdpd {
 }
 
 #---------------------------------------------------------------------------
+# 関数：依存関係にあるプラグイン群を取得（実行するもの／重複あり）
+
+function getdpm {
+  local namsrc=${1}
+  local l i
+
+  if test ${depend} -eq 1
+  then
+    l=($(
+      cat "${pthdpd}" "${pthdpe}" | sed -e '/^#/d' -e 's/\r$//' |
+      awk -v k="$namsrc" '
+        $0 == k    {i=1; next}
+        i && /^- / {sub(/^- /, ""); print; next}
+        i && !/^-/ {exit}
+      '
+    ))
+    for i in ${l[@]}
+    do
+      if cat "${pthdpd}" "${pthdpe}" | sed -e '/^#/d' -e 's/\r$//' | grep -qx -- "$namsrc"
+      then
+        if flgexm ${i}
+        then
+          test ${action} = 'create' -o ${action} = 'launch' && lstdpm=(${i} ${lstdpm[@]})
+          test ${action} = 'delete' -o ${action} = 'finish' && lstdpm=(${lstdpm[@]} ${i})
+        fi
+        getdpm ${i}
+      fi
+    done
+  fi
+}
+
+#---------------------------------------------------------------------------
 # 関数：対象のプラグインが、取得対象が外されているかどうかーー外されていないなら真（0 ）
 
 function flgexc {
+  local namsrc=${1}
+
+  if cat "${pthplh}" | sed -e '/^#/d' -e 's/\r$//' | awk -v s=${namsrc} '$1 == s && $3 == "-" {exit 1}'
+  then
+    return 0
+  else
+    return 1
+  fi
+}
+
+#---------------------------------------------------------------------------
+# 関数：対象のプラグインが、実行対象が外されているかどうかーー外されていないなら真（0 ）
+
+function flgexm {
   local namsrc=${1}
 
   if cat "${pthplh}" | sed -e '/^#/d' -e 's/\r$//' | awk -v s=${namsrc} '$1 == s && $2 == "-" {exit 1}'
@@ -156,6 +202,14 @@ fi
 getdpd ${namsrc}
 unqdpd=$(echo ${lstdpd[@]} | tr ' ' '\n' | awk '!s[$0]++')
 
+lstdpm=()
+if flgexm ${namsrc}
+then
+  lstdpm=(${namsrc})
+fi
+getdpm ${namsrc}
+unqdpm=$(echo ${lstdpm[@]} | tr ' ' '\n' | awk '!s[$0]++')
+
 #---------------------------------------------------------------------------
 # 処理：追加：インポート
 
@@ -169,7 +223,7 @@ then
       getdif ${namsrc}
     fi
   else
-    if cnfrtn "target: create (import) : ${unqdpd[@]}"
+    if cnfrtn "target: create (import) :\n${unqdpd[@]}"
     then
       stsupd=0
       for i in ${unqdpd[@]}
@@ -195,10 +249,10 @@ fi
 
 if test ${action} = 'create' -o ${action} = 'launch' -o ${action} = 'delete' -o ${action} = 'finish'
 then
-  if cnfrtn "target: ${action} (plugin) : ${unqdpd[@]}"
+  if cnfrtn "target: ${action} (plugin) :\n${unqdpm[@]}"
   then
     # 公式フォルダ
-    for i in ${unqdpd[@]}
+    for i in ${unqdpm[@]}
     do
       f="${pthtop}"/import/${i}/manage/bin/${action}.sh
       if test -e "${f}"
@@ -210,7 +264,7 @@ then
       fi
     done
     # 固有フォルダ
-    for i in ${unqdpd[@]}
+    for i in ${unqdpm[@]}
     do
       f="${pthtop}"/import_custom/${i}/manage/bin/${action}.sh
       if test -e "${f}"
@@ -230,7 +284,7 @@ fi
 
 if test ${action} = 'delete'
 then
-  if cnfrtn "target: delete (import) : ${unqdpd[@]}"
+  if cnfrtn "target: delete (import) :\n${unqdpd[@]}"
   then
     for i in ${unqdpd[@]}
     do
