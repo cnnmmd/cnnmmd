@@ -4,7 +4,7 @@ function cnfrtn {
   local msgalr="${1}"
   local r
 
-  /bin/echo -n "${msgalr} (y|n) : "
+  printf "${msgalr} (y|n) : "
   read r
   if test ${r} = 'y'
   then
