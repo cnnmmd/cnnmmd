@@ -223,7 +223,7 @@ then
       getdif ${namsrc}
     fi
   else
-    if cnfrtn "target: create (import) :\n${unqdpd[@]}"
+    if cnfrtn "target: create (import) :\n${unqdpd[@]}\n"
     then
       stsupd=0
       for i in ${unqdpd[@]}
@@ -249,7 +249,7 @@ fi
 
 if test ${action} = 'create' -o ${action} = 'launch' -o ${action} = 'delete' -o ${action} = 'finish'
 then
-  if cnfrtn "target: ${action} (plugin) :\n${unqdpm[@]}"
+  if cnfrtn "target: ${action} (plugin) :\n${unqdpm[@]}\n"
   then
     # 公式フォルダ
     for i in ${unqdpm[@]}
@@ -284,7 +284,7 @@ fi
 
 if test ${action} = 'delete'
 then
-  if cnfrtn "target: delete (import) :\n${unqdpd[@]}"
+  if cnfrtn "target: delete (import) :\n${unqdpd[@]}\n"
   then
     for i in ${unqdpd[@]}
     do
