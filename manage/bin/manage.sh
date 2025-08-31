@@ -81,17 +81,21 @@ function getsrc {
   then
     if cnfrtn "update: ${namsrc}"
     then
-      cd "${pthtop}"/import/${namsrc}
-      getdif ${namsrc}
-      stsupd=${?}
+      if cd "${pthtop}"/import/${namsrc}
+      then
+        getdif ${namsrc}
+        stsupd=${?}
+      fi
     fi
   else
     if cnfrtn "import: ${namsrc}"
     then
       read brcsrc remsrc < <(getrem ${namsrc})
-      cd "${pthtop}"/import
-      git clone -b ${brcsrc} ${remsrc}
-      stsupd=1
+      if cd "${pthtop}"/import
+      then
+        git clone -b ${brcsrc} ${remsrc}
+        stsupd=1
+      fi
     fi
   fi
   return ${stsupd}
