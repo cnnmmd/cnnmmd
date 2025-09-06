@@ -33,6 +33,10 @@ cnnmmd_xoxxox_tttsim
 - cnnmmd_xoxxox_libtlk
 - cnnmmd_xoxxox_envweb
 
+cnnmmd_xoxxox_ttttry
+- cnnmmd_xoxxox_libtlk
+- cnnmmd_xoxxox_envweb
+
 cnnmmd_xoxxox_sensim
 - cnnmmd_xoxxox_libtlk
 - cnnmmd_xoxxox_envweb
