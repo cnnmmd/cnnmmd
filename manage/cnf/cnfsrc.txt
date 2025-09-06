@@ -34,6 +34,7 @@ cnnmmd_xoxxox_tttlam + master https://github.com/cnnmmd/cnnmmd_xoxxox_tttlam
 cnnmmd_xoxxox_sensim + master https://github.com/cnnmmd/cnnmmd_xoxxox_sensim
 cnnmmd_xoxxox_sengpt + master https://github.com/cnnmmd/cnnmmd_xoxxox_sengpt
 cnnmmd_xoxxox_senluk + master https://github.com/cnnmmd/cnnmmd_xoxxox_senluk
+cnnmmd_xoxxox_ttttry + master https://github.com/cnnmmd/cnnmmd_xoxxox_ttttry
 
 cnnmmd_xoxxox_tlkweb + master https://github.com/cnnmmd/cnnmmd_xoxxox_tlkweb
 cnnmmd_xoxxox_tlkelc + master https://github.com/cnnmmd/cnnmmd_xoxxox_tlkelc
