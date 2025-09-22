@@ -103,6 +103,12 @@ cnnmmd_xoxxox_tttlcp_050
 
 #
 
+cnnmmd_xoxxox_tttgph
+- cnnmmd_xoxxox_libtlk
+- cnnmmd_xoxxox_appolm
+
+#
+
 cnnmmd_xoxxox_mgrpyt_web_tlk_wsp_vox_lcp_001
 - cnnmmd_xoxxox_tlkweb
 - cnnmmd_xoxxox_sttwsp

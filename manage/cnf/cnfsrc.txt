@@ -3,6 +3,7 @@ manage + master https://github.com/cnnmmd/cnnmmd
 cnnmmd_xoxxox_appmid + master https://github.com/cnnmmd/cnnmmd_xoxxox_appmid
 cnnmmd_xoxxox_appweb + master https://github.com/cnnmmd/cnnmmd_xoxxox_appweb
 cnnmmd_xoxxox_appcmf + master https://github.com/cnnmmd/cnnmmd_xoxxox_appcmf
+cnnmmd_xoxxox_appolm + master https://github.com/cnnmmd/cnnmmd_xoxxox_appolm
 
 cnnmmd_xoxxox_libmid + master https://github.com/cnnmmd/cnnmmd_xoxxox_libmid
 cnnmmd_xoxxox_libimg + master https://github.com/cnnmmd/cnnmmd_xoxxox_libimg
@@ -36,6 +37,7 @@ cnnmmd_xoxxox_sensim + master https://github.com/cnnmmd/cnnmmd_xoxxox_sensim
 cnnmmd_xoxxox_sengpt + master https://github.com/cnnmmd/cnnmmd_xoxxox_sengpt
 cnnmmd_xoxxox_senluk + master https://github.com/cnnmmd/cnnmmd_xoxxox_senluk
 cnnmmd_xoxxox_ttttry + master https://github.com/cnnmmd/cnnmmd_xoxxox_ttttry
+cnnmmd_xoxxox_tttgph + master https://github.com/cnnmmd/cnnmmd_xoxxox_tttgph
 
 cnnmmd_xoxxox_tlkweb + master https://github.com/cnnmmd/cnnmmd_xoxxox_tlkweb
 cnnmmd_xoxxox_tlkelc + master https://github.com/cnnmmd/cnnmmd_xoxxox_tlkelc
