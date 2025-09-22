@@ -13,3 +13,5 @@ xoxxox/envoai:001 ghcr.io/cnnmmd/xoxxox/envoai:001
 xoxxox/envnai:001 ghcr.io/cnnmmd/xoxxox/envnai:001
 xoxxox/envhgf:001 ghcr.io/cnnmmd/xoxxox/envhgf:001
 xoxxox/envrcg:001 ghcr.io/cnnmmd/xoxxox/envrcg:001
+xoxxox/envgph:001 +
+xoxxox/envolm:001 +
