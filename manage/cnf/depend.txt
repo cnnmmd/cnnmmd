@@ -54,9 +54,9 @@ cnnmmd_xoxxox_sttvec
 cnnmmd_xoxxox_sttwsp
 - cnnmmd_xoxxox_libtlk
 
-cnnmmd_xoxxox_ttsnjv
-- cnnmmd_xoxxox_libtlk
-- cnnmmd_xoxxox_envweb
+#cnnmmd_xoxxox_ttsnjv
+#- cnnmmd_xoxxox_libtlk
+#- cnnmmd_xoxxox_envweb
 
 cnnmmd_xoxxox_ttsvox
 - cnnmmd_xoxxox_libtlk
