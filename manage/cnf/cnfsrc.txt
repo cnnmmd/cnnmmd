@@ -51,7 +51,7 @@ cnnmmd_xoxxox_tlkfig + master https://github.com/cnnmmd/cnnmmd_xoxxox_tlkfig
 cnnmmd_xoxxox_mgrcmf_cmf_txt_vox_001 + master https://github.com/cnnmmd/cnnmmd_xoxxox_mgrcmf_cmf_txt_vox_001
 cnnmmd_xoxxox_mgrcmf_cmf_sim_wsp_vox_001 + master https://github.com/cnnmmd/cnnmmd_xoxxox_mgrcmf_cmf_sim_wsp_vox_001
 cnnmmd_xoxxox_mgrcmf_vam_txt_vox_001 + master https://github.com/cnnmmd/cnnmmd_xoxxox_mgrcmf_vam_txt_vox_001
-cnnmmd_xoxxox_mgrcmf_vam_sim_wsp_vox_001 + master https://github.com/cnnmmd/cnnmmd_xoxxox_mgrcmf_vam_sim_wsp_vox_00
+cnnmmd_xoxxox_mgrcmf_vam_sim_wsp_vox_001 + master https://github.com/cnnmmd/cnnmmd_xoxxox_mgrcmf_vam_sim_wsp_vox_001
 cnnmmd_xoxxox_mgrcmf_cmf_tlk_wsp_vox_lcp_001 + master https://github.com/cnnmmd/cnnmmd_xoxxox_mgrcmf_cmf_tlk_wsp_vox_lcp_001
 cnnmmd_xoxxox_mgrcmf_cmf_tlk_wsp_vox_lcp_002 + master https://github.com/cnnmmd/cnnmmd_xoxxox_mgrcmf_cmf_tlk_wsp_vox_lcp_002
 cnnmmd_xoxxox_mgrcmf_cmf_tlk_wsp_vit_lcp_001 + master https://github.com/cnnmmd/cnnmmd_xoxxox_mgrcmf_cmf_tlk_wsp_vit_lcp_001
