@@ -4,6 +4,7 @@ cnnmmd_xoxxox_appmid + master https://github.com/cnnmmd/cnnmmd_xoxxox_appmid
 cnnmmd_xoxxox_appweb + master https://github.com/cnnmmd/cnnmmd_xoxxox_appweb
 cnnmmd_xoxxox_appcmf + master https://github.com/cnnmmd/cnnmmd_xoxxox_appcmf
 cnnmmd_xoxxox_appolm + master https://github.com/cnnmmd/cnnmmd_xoxxox_appolm
+cnnmmd_xoxxox_appprc + master https://github.com/cnnmmd/cnnmmd_xoxxox_appprc
 
 cnnmmd_xoxxox_libmid + master https://github.com/cnnmmd/cnnmmd_xoxxox_libmid
 cnnmmd_xoxxox_libimg + master https://github.com/cnnmmd/cnnmmd_xoxxox_libimg
