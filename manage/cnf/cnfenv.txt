@@ -16,3 +16,11 @@ xoxxox/envrcg:001 ghcr.io/cnnmmd/xoxxox/envrcg:001
 xoxxox/envgph:001 +
 xoxxox/envolm:001 +
 xoxxox/envprc:001 ghcr.io/cnnmmd/xoxxox/envprc:001
+xoxxox/envmsh:001 +
+xoxxox/envmio:001 +
+xoxxox/enviro:001 +
+xoxxox/envxws:001 +
+xoxxox/envgym:001 +
+xoxxox/envevo:001 +
+xoxxox/envmjc:001 +
+xoxxox/envmtv:001 +
