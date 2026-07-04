@@ -13,7 +13,7 @@ then
   mkdir "${pthtop}"/import_custom
 fi
 
-if test ! -e "${pthtop}"/vol???
+if test ! -e "${pthtop}"/vol000
 then
   mkdir "${pthtop}"/vol000
   mkdir "${pthtop}"/vol001
