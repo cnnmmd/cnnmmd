@@ -13,9 +13,10 @@ then
   mkdir "${pthtop}"/import_custom
 fi
 
-if test ! -e "${pthtop}"/strage
+if test ! -e "${pthtop}"/vol???
 then
-  mkdir "${pthtop}"/strage
+  mkdir "${pthtop}"/vol000
+  mkdir "${pthtop}"/vol001
 fi
 
 touch "${pthtop}"/manage/cnf/cnfsrc_custom.txt
