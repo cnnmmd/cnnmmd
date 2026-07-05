@@ -23,6 +23,7 @@ cnnmmd_xoxxox_envgym + master https://github.com/cnnmmd/cnnmmd_xoxxox_envgym
 cnnmmd_xoxxox_envevo + master https://github.com/cnnmmd/cnnmmd_xoxxox_envevo
 cnnmmd_xoxxox_envmjc + master https://github.com/cnnmmd/cnnmmd_xoxxox_envmjc
 cnnmmd_xoxxox_envmtv + master https://github.com/cnnmmd/cnnmmd_xoxxox_envmtv
+cnnmmd_xoxxox_envplw + master https://github.com/cnnmmd/cnnmmd_xoxxox_envplw
 
 cnnmmd_xoxxox_imgdll + master https://github.com/cnnmmd/cnnmmd_xoxxox_imgdll
 cnnmmd_xoxxox_imgnai + master https://github.com/cnnmmd/cnnmmd_xoxxox_imgnai
