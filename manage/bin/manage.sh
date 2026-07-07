@@ -49,7 +49,8 @@ function getdif {
   echo "status: branch: ${brcsrc}" # DBG
   echo "status: remote: ${remsrc}" # DBG
   brccrr=$(git rev-parse --abbrev-ref HEAD)
-  remcrr=$(git remote get-url origin)
+  #remcrr=$(git remote get-url origin)
+  remcrr=$(git config --get remote.origin.url)
   if test ${brccrr} != ${brcsrc}
   then
     git switch ${brcsrc} || git switch -c ${brcsrc}
