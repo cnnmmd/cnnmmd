@@ -5,8 +5,15 @@ cnnmmd_xoxxox_appcmf + master https://github.com/cnnmmd/cnnmmd_xoxxox_appcmf
 cnnmmd_xoxxox_appweb + master https://github.com/cnnmmd/cnnmmd_xoxxox_appweb
 cnnmmd_xoxxox_appxws + master https://github.com/cnnmmd/cnnmmd_xoxxox_appxws
 cnnmmd_xoxxox_appprc + master https://github.com/cnnmmd/cnnmmd_xoxxox_appprc
+cnnmmd_xoxxox_appdoc + master https://github.com/cnnmmd/cnnmmd_xoxxox_appdoc
 cnnmmd_xoxxox_applsv + master https://github.com/cnnmmd/cnnmmd_xoxxox_applsv
 cnnmmd_xoxxox_appolm + master https://github.com/cnnmmd/cnnmmd_xoxxox_appolm
+cnnmmd_xoxxox_srvsvn + master https://github.com/cnnmmd/cnnmmd_xoxxox_srvsvn
+cnnmmd_xoxxox_srvsvm + master https://github.com/cnnmmd/cnnmmd_xoxxox_srvsvm
+cnnmmd_xoxxox_srvsvw + master https://github.com/cnnmmd/cnnmmd_xoxxox_srvsvw
+cnnmmd_xoxxox_srvsvx + master https://github.com/cnnmmd/cnnmmd_xoxxox_srvsvx
+cnnmmd_xoxxox_srvcll + master https://github.com/cnnmmd/cnnmmd_xoxxox_srvcll
+cnnmmd_xoxxox_srvclg + master https://github.com/cnnmmd/cnnmmd_xoxxox_srvclg
 
 cnnmmd_xoxxox_libmid + master https://github.com/cnnmmd/cnnmmd_xoxxox_libmid
 cnnmmd_xoxxox_libimg + master https://github.com/cnnmmd/cnnmmd_xoxxox_libimg
@@ -25,6 +32,7 @@ cnnmmd_xoxxox_envmjc + master https://github.com/cnnmmd/cnnmmd_xoxxox_envmjc
 cnnmmd_xoxxox_envmtv + master https://github.com/cnnmmd/cnnmmd_xoxxox_envmtv
 cnnmmd_xoxxox_envplw + master https://github.com/cnnmmd/cnnmmd_xoxxox_envplw
 
+cnnmmd_xoxxox_imgdfs + master https://github.com/cnnmmd/cnnmmd_xoxxox_imgdfs
 cnnmmd_xoxxox_imgdll + master https://github.com/cnnmmd/cnnmmd_xoxxox_imgdll
 cnnmmd_xoxxox_imgnai + master https://github.com/cnnmmd/cnnmmd_xoxxox_imgnai
 cnnmmd_xoxxox_sttnil + master https://github.com/cnnmmd/cnnmmd_xoxxox_sttnil

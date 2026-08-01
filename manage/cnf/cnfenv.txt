@@ -2,6 +2,12 @@ xoxxox/envmid:001 ghcr.io/cnnmmd/xoxxox/envmid:001
 xoxxox/envcmf:001 ghcr.io/cnnmmd/xoxxox/envcmf:001
 #xoxxox/envcmf:001 ghcr.io/cnnmmd/xoxxox/envcmf:001-arc001
 xoxxox/envweb:001 ghcr.io/cnnmmd/xoxxox/envweb:001
+xoxxox/envsvn:001 +
+xoxxox/envsvm:001 +
+xoxxox/envsvw:001 +
+xoxxox/envsvx:001 +
+xoxxox/envcll:001 +
+xoxxox/envclg:001 +
 xoxxox/envvit:001 ghcr.io/cnnmmd/xoxxox/envvit:001
 #xoxxox/envvit:001 ghcr.io/cnnmmd/xoxxox/envvit:001-arc001
 xoxxox/envvox:001 ghcr.io/cnnmmd/xoxxox/envvox:001
@@ -12,10 +18,12 @@ xoxxox/envlcp:001 ghcr.io/cnnmmd/xoxxox/envlcp:001
 xoxxox/envoai:001 ghcr.io/cnnmmd/xoxxox/envoai:001
 xoxxox/envnai:001 ghcr.io/cnnmmd/xoxxox/envnai:001
 xoxxox/envhgf:001 ghcr.io/cnnmmd/xoxxox/envhgf:001
+xoxxox/envdfs:001 +
 xoxxox/envrcg:001 ghcr.io/cnnmmd/xoxxox/envrcg:001
 xoxxox/envgph:001 +
 xoxxox/envolm:001 +
 xoxxox/envprc:001 ghcr.io/cnnmmd/xoxxox/envprc:001
+xoxxox/envdoc:001 +
 xoxxox/envmsh:001 +
 xoxxox/envmio:001 +
 xoxxox/enviro:001 +
