@@ -16,11 +16,14 @@ action="${1}" # アクション
 namsrc="${2}" # プラグイン
 shift 2
 depend=0
-while getopts 'd' opt
+while getopts 'dm:' opt
 do
   case ${opt} in
     d) # 依存するすべてのプラグインを対象に（-d）
       depend=1
+      ;;
+    m) # 変更時のラベル指定（-m ...）
+      nammod=${OPTARG}
       ;;
   esac
 done
@@ -49,8 +52,7 @@ function getdif {
   echo "status: branch: ${brcsrc}" # DBG
   echo "status: remote: ${remsrc}" # DBG
   brccrr=$(git rev-parse --abbrev-ref HEAD)
-  #remcrr=$(git remote get-url origin)
-  remcrr=$(git config --get remote.origin.url)
+  remcrr=$(git remote get-url origin)
   if test ${brccrr} != ${brcsrc}
   then
     git switch ${brcsrc} || git switch -c ${brcsrc}
@@ -309,5 +311,16 @@ then
   if test ${namsrc} = 'manage'
   then
     "${pthtop}"/manage/bin/delete.sh
+  fi
+fi
+
+#---------------------------------------------------------------------------
+# 処理：変更
+
+if test ${action} = 'modify'
+then
+  if cnfrtn "modify: ${namsrc}: ${nammod}"
+  then
+    "${pthtop}"/import/${namsrc}/manage/bin/${action}.sh ${nammod}
   fi
 fi
