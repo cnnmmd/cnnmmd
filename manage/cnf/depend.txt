@@ -11,6 +11,9 @@ cnnmmd_xoxxox_appweb
 
 #
 
+cnnmmd_xoxxox_imgdfs
+- cnnmmd_xoxxox_libimg
+
 cnnmmd_xoxxox_imgdll
 - cnnmmd_xoxxox_libimg
 - cnnmmd_xoxxox_envoai
