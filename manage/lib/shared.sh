@@ -143,3 +143,36 @@ function endimg_opt {
     docker compose -p ${namprj} -f "${cnfcmp}" -f "${cnfopt}" down
   fi
 }
+
+#---------------------------------------------------------------------------
+
+function cpytgt {
+  local pthsrc="${1}"
+  local dirdst="${2}"
+  local n m d f
+
+  if test -e "${pthsrc}" -a -d "${dirdst}"
+  then
+    f=$(basename "${pthsrc}")
+    if test -e "${dirdst}/${f}"
+    then
+      if ! cmp -s "${pthsrc}" "${dirdst}/${f}"
+      then
+        n=$(date '+%N')
+        m=${n:0:6}
+        d=$(date '+%Y_%m_%d_%H_%M_%S')_${m}
+        if cnfrtn "modify: ${dirdst}/${f}, backup: ${dirdst}/${f}_old_${d}"
+        then
+          mv "${dirdst}/${f}" "${dirdst}/${f}_old_${d}"
+          cp -p "${pthsrc}" "${dirdst}"
+        fi
+      fi
+    else
+      if cnfrtn "create: ${dirdst}/${f}"
+      then
+        cp -p "${pthsrc}" "${dirdst}"
+      fi
+    fi
+
+  fi
+}
